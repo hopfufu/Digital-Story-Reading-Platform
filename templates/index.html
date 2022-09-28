@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <section class="home">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center w-100 h-100">
+            <img src="http://images.amazon.com/images/P/043935806X.0..."class="" alt="...">
+          </div>
+        </div>
+        {% for i in imgUrl %}
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center w-100 h-100">
+              <img src={{ i }} class="" alt="...">
+            </div>
+          </div>
+        {% endfor %}
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center w-100 h-100">
+            <img src="http://images.amazon.com/images/P/0345339681.0..."class="" alt="...">
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
