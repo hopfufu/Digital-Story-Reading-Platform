@@ -16,3 +16,6 @@ body{
 section.navigation {
     padding-bottom: 35px;
 }
+.wrapper {
+    display: flex;
+}

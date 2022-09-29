@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="{% static 'bootstrap.rtl.min.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
+<style>
+  .text-white{
+    color: white;
+  }
+  .img1{
+    width: 277px;
+    height: 307px;
+  }
+</style>
 <body>
   <section class="navigation">
     <nav class="navbar navbar-expand-lg bg-light">
@@ -40,29 +49,40 @@
       </div>
     </nav>
   </section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-white">Top books</h1>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+
+
+  <!-- Top books section -->
   <section class="home">
-    <div>
-      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="d-flex justify-content-center w-100 h-100">
-              <img src="http://images.amazon.com/images/P/043935806X.0..."class="opacity-0.2" alt="...">
-            </div>
-            
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center w-100 h-100">
+            <img src="http://images.amazon.com/images/P/0345339703.0..." alt="...">
           </div>
-          {% for i in imgUrl %}
-            <div class="carousel-item">
-              <div class="d-flex justify-content-center w-100 h-100">
-                  <img src={{ i }} class="opacity-0.5" alt="...">
-              </div>
+            
+        </div>
+        {% for i in imgUrl %}
+          <div class="carousel-item ">
+            <div class="d-flex justify-content-center w-100 h-100">
+              <img src={{ i }}  alt="...">
             </div>
-          {% endfor %}
+          </div>
+        {% endfor %}
           <div class="carousel-item">
             <div class="d-flex justify-content-center w-100 h-100">
-              <img src="http://images.amazon.com/images/P/0345339681.0..."class="opacity-0.5" alt="...">
+              <img src="http://images.amazon.com/images/P/0345339681.0..." alt="...">
             </div>
           </div>
-        </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -73,90 +93,49 @@
         </button>
       </div>
     </div>
-  </section>  
-  <!-- <div class="container">
+  </section>
+  
+  
+  
+  
+  
+  <!-- Recommendation part of the site -->
+  <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <div class="col-12">
+        <h1 class="text-white" style="font-size: 80px ;text-align: center;padding-top: 30px">Reccomended Books</h1>
+      </div>
+
+      <div class="col-3" style="margin-top: 50px;">
+        <div class="card">
+          <div class="card-body">
+            <img class="img1" src="http://images.amazon.com/images/P/0671758896.0..." alt="">
           </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="single-box">
-                    <div class="img-area"><img src="" alt=""></div>
-                    <div class="img-text">
-                      <h2>Person One</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem tenetur nostrum pariatur necessitatibus, reiciendis facilis animi recusandae voluptate porro. Vero est sint reiciendis libero mollitia, illo recusandae expedita delectus quas?</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-4">
-                  <div class="single-box">
-                    <div class="img-area"><img src="" alt=""></div>
-                    <div class="img-text">
-                      <h2>Person Two</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem tenetur nostrum pariatur necessitatibus, reiciendis facilis animi recusandae voluptate porro. Vero est sint reiciendis libero mollitia, illo recusandae expedita delectus quas?</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-4">
-                  <div class="single-box">
-                    <div class="img-area"><img src="" alt=""></div>
-                    <div class="img-text">
-                      <h2>Person Three</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem tenetur nostrum pariatur necessitatibus, reiciendis facilis animi recusandae voluptate porro. Vero est sint reiciendis libero mollitia, illo recusandae expedita delectus quas?</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="single-box">
-                    <div class="img-area"><img src="" alt=""></div>
-                    <div class="img-text">
-                      <h2>Person One</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem tenetur nostrum pariatur necessitatibus, reiciendis facilis animi recusandae voluptate porro. Vero est sint reiciendis libero mollitia, illo recusandae expedita delectus quas?</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-4">
-                  <div class="single-box">
-                    <div class="img-area"><img src="" alt=""></div>
-                    <div class="img-text">
-                      <h2>Person Two</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem tenetur nostrum pariatur necessitatibus, reiciendis facilis animi recusandae voluptate porro. Vero est sint reiciendis libero mollitia, illo recusandae expedita delectus quas?</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-4">
-                  <div class="single-box">
-                    <div class="img-area"><img src="" alt=""></div>
-                    <div class="img-text">
-                      <h2>Person Three</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem tenetur nostrum pariatur necessitatibus, reiciendis facilis animi recusandae voluptate porro. Vero est sint reiciendis libero mollitia, illo recusandae expedita delectus quas?</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
+        </div>
+      </div>
+      <div class="col-3" style="margin-top: 50px;">
+        <div class="card">
+          <div class="card-body">
+            <img class="img1" src="http://images.amazon.com/images/P/0671758896.0..." alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-3" style="margin-top: 50px;">
+        <div class="card">
+          <div class="card-body">
+            <img class="img1" src="http://images.amazon.com/images/P/0671758896.0..." alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-3" style="margin-top: 50px;">
+        <div class="card">
+          <div class="card-body">
+            <img class="img1" src="http://images.amazon.com/images/P/0671758896.0..." alt="">
           </div>
         </div>
       </div>
     </div>
-  </div> -->
-  
+  </div>
   <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>
