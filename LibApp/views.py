@@ -22,7 +22,7 @@ def index(request):
     #         emp[str(j)]=list([context_dic[i][j]])
     #     break
     # print(emp)
-    return render(request,'index.html',context=context_dic)
+    return render(request,'LibApp/index.html',context=context_dic)
 
 def recomendation(request):
     with open('books.pkl','rb') as f1:
@@ -33,7 +33,7 @@ def recomendation(request):
         pt=pickle.load(f3)
     book_search='Whispers'
     if book_search==None:
-        return render(request,'recommendations.html')
+        return render(request,'LibApp/recommendations.html')
     else:
         l=[]
         l1=[]
@@ -59,4 +59,4 @@ def recomendation(request):
             'img3':l1[3][0],
             'img4':l1[4][0],
         }
-        return render(request,'recommendations.html',context=d)
+        return render(request,'LibApp/recommendations.html',context=d)
