@@ -19,5 +19,6 @@ from LibApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    
+    path('rec/',views.recomendation,name='rec'),
+    path('main/',views.index,name='main')
 ]
