@@ -20,7 +20,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="main">Home</a>
+                <a class="nav-link active" aria-current="page" href="home">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="rec">Recommendation</a>
@@ -47,7 +47,7 @@
           <!--  -->
         <!-- searchbox -->
   <div style="margin:auto;padding-bottom:50px;padding-top:30px" class="container">
-    <form  method="POST" action="recomendBooks/">
+    <form  method="POST" >
       {% csrf_token %}
       <input class="form-control me-2" type="search" placeholder="search" aria-label="search" name="u_data"><br>
       <button class="btn btn-outline-success" type="submit">Recommend</button>

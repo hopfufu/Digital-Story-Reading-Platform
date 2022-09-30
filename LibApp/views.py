@@ -33,19 +33,23 @@ def index(request):
     return render(request,'index.html',context=context_dic)
 
 def recomendation(request):
-        book_search='1984'
-        l=[]
-        l1=[]
-        d={}
-        def recommend():
+    book_search=request.POST.get('u_data')
+    l=[]
+    l1=[]
+    d={}
+    def recommend():
+        if book_search==None:
+            index=170
+        else:
             index=np.where(pt.index==book_search)[0][0]
-            similar_items=sorted(list(enumerate(sim_score[index])),key=lambda x:x[1],reverse=True)[0:6]
-            for i in similar_items:
-                t_df=books[pt.index[i[0]]==books['Book-Title']]
-                l.append(t_df.drop_duplicates('Book-Title')['Book-Title'].values)
-                l1.append(t_df.drop_duplicates('Book-Title')['Image-URL-L'].values)
-        recommend()
-        d={'a':l[0][0],
+        similar_items=sorted(list(enumerate(sim_score[index])),key=lambda x:x[1],reverse=True)[0:6]
+        for i in similar_items:
+            t_df=books[pt.index[i[0]]==books['Book-Title']]
+            l.append(t_df.drop_duplicates('Book-Title')['Book-Title'].values)
+            l1.append(t_df.drop_duplicates('Book-Title')['Image-URL-L'].values)
+    recommend()
+    print(book_search)
+    d={ 'a':l[0][0],
         'a1':l[1][0],
         'a2':l[2][0],
         'a3':l[3][0],
@@ -56,4 +60,4 @@ def recomendation(request):
         'img3':l1[3][0],
         'img4':l1[4][0],
         }
-        return render(request,'recommendations.html',context=d)
+    return render(request,'recommendations.html',context=d)
